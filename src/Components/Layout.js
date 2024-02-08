@@ -5,7 +5,7 @@ const Layout = () => {
   return (
     <>
       <NavBar />
-      <div id="main">
+      <div id="main" style={{ marginTop: "75px" }}>
         <Outlet />
       </div>
     </>

@@ -3,16 +3,22 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Header = styled.nav`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 70px;
   background-color: #ddaabb;
   display: flex;
-  box-shadow: 10px 10px 10px pink;
 `;
 
 const MyLink = styled(Link)`
   align-self: center;
+  text-decoration: none;
+  font-family: Optima, sans-serif;
+  color: grey;
   margin: 10px;
-  padding: 3px;
+  padding: 10px;
   border: solid 2px black;
   border-radius: 90px;
   margin-left: ${(props) => (props.$right ? "auto" : false)};
@@ -23,7 +29,7 @@ const NavBar = () => {
     <Header>
       <MyLink to="/">HOME</MyLink>
       <MyLink to="/" $right>
-        HOME
+        Log in
       </MyLink>
     </Header>
   );
