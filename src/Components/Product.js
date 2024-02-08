@@ -1,36 +1,43 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import CG from "../img/img.jpg";
+import { faker } from "@faker-js/faker";
 
 const Card = styled.div`
   border: grey solid 1px;
   background-color: grey;
   border-radius: 10px;
-  width: 19%;
-  height: 300px;
+  width: 30%;
   margin: 5px;
   display: flex;
   flex-direction: column;
-  column-count: 5;
 `;
 
 const CardImage = styled.img`
-  height: 200px;
-  width: 200px;
-  padding: 10px;
-  align-self
+  height: 80%;
+  width: 80%;
+  padding-left: 10%;
 `;
 
-const Product = () => {
+const ProductTitle = styled(Link)`
+  text-decoration: none;
+  font-family: Optima, sans-serif;
+  color: white;
+`;
+
+const PriceButton = styled.button`
+
+`
+
+const Product = ({ name, price }) => {
   return (
     <>
       <Card>
         <Link to="">
-          <CardImage src={CG}></CardImage>
-          <p>Nom du produit</p>
+          <CardImage src={faker.image.url()}></CardImage>
         </Link>
-        <button>Prix</button>
+        <ProductTitle>{name}</ProductTitle>
+        <button>{price}€</button>
       </Card>
     </>
   );

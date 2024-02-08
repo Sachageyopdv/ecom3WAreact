@@ -10,6 +10,8 @@ const Header = styled.nav`
   height: 70px;
   background-color: #ddaabb;
   display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
 `;
 
 const MyLink = styled(Link)`
@@ -21,13 +23,16 @@ const MyLink = styled(Link)`
   padding: 10px;
   border: solid 2px black;
   border-radius: 90px;
-  margin-left: ${(props) => (props.$right ? "auto" : false)};
+  margin-left: ${(props) => (props.$right ? "auto" : "10px")};
 `;
 
 const NavBar = () => {
   return (
     <Header>
       <MyLink to="/">HOME</MyLink>
+      <MyLink to="/" $right>
+        Log in
+      </MyLink>
       <MyLink to="/" $right>
         Log in
       </MyLink>
