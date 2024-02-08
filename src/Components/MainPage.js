@@ -12,11 +12,8 @@ const MyDiv = styled.div`
   flex-wrap: wrap;
 `;
 
-
 const MainPage = () => {
   const [products, setProducts] = useState([]);
-
- 
   
   useEffect(() => {
     axios("https://api-3wa-ecomm-524fde41edfa.herokuapp.com/api/product")

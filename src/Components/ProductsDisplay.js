@@ -13,7 +13,7 @@ const ProductsDisplay = ({ products }) => {
   return (
     <ProductZone>
       {products.map((elem) => (
-        <Product {...elem} />
+        <Product key={elem._id} {...elem} />
       ))}
     </ProductZone>
   );

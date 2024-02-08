@@ -29,11 +29,11 @@ const PriceButton = styled.button`
 
 `
 
-const Product = ({ name, price }) => {
+const Product = ({ name, price, _id }) => {
   return (
     <>
       <Card>
-        <Link to="">
+        <Link to={`/:${_id}`}>
           <CardImage src={faker.image.url()}></CardImage>
         </Link>
         <ProductTitle>{name}</ProductTitle>
