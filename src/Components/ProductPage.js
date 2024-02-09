@@ -25,11 +25,12 @@ const ProductPage = () => {
     <>
       {productData && (
         <div>
-          <img src={faker.image.url()}></img>
+          <img alt="placeholderimage" src={faker.image.url()}></img>
           <h1>{productData.name}</h1>
           <label>{productData.color}</label>
           <Price>{productData.price}€</Price>
           <p>{productData.desc}</p>
+          <p>Stock displonible: {productData.stock}</p>
         </div>
       )}
     </>

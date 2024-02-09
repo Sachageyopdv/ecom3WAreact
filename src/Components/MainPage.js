@@ -14,19 +14,29 @@ const MyDiv = styled.div`
 
 const MainPage = () => {
   const [products, setProducts] = useState([]);
-  
+  const [filter, setFilter] = useState({
+    minPrice: 0,
+    maxPrice: 0,
+    name: "",
+    brand: "",
+  });
+
   useEffect(() => {
     axios("https://api-3wa-ecomm-524fde41edfa.herokuapp.com/api/product")
-    .then(({ data }) => {
-      setProducts(data);
-    })
-    .catch((error) => console.error("Error fetching data:", error));
-  }, [])
- 
+      .then(({ data }) => {
+        setProducts(data);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
   return (
     <MyDiv>
-      <SideBar />
-      <ProductsDisplay products={products} />
+      {products && (
+        <>
+          <SideBar productList={products} setFilter={setFilter} />
+          <ProductsDisplay products={products} filter={filter}/>
+        </>
+      )}
     </MyDiv>
   );
 };
