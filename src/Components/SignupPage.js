@@ -94,7 +94,7 @@ const SignupPage = () => {
           required
         />
       </label>
-      <button type="submit">Sign Up</button>
+      <button>Sign Up</button>
     </form>
   );
 };
