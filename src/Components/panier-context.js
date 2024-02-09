@@ -10,7 +10,7 @@ const cartReducer = (state, action) => {
     const elementPanier = [...state.items];
 
     const existingElementIndex = elementPanier.findIndex(
-      (cartItem) => cartItem.id === action.payload._id
+      (cartItem) => cartItem.id === action.payload.product.id
     );
 
     const existingElement = elementPanier[existingElementIndex];
@@ -28,6 +28,7 @@ const cartReducer = (state, action) => {
           id: product.id,
           name: product.name,
           quantity: 1,
+          price: product.price,
         });
         
       }

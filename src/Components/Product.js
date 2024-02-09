@@ -38,6 +38,7 @@ const PriceButton = styled.button`
 
 const Product = ({ name, price, _id }) => {
   const { addItemToCart } = useContext(PanierContext);
+  
   return (
     <>
       <Card>

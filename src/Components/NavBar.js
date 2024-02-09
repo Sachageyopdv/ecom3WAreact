@@ -46,9 +46,9 @@ const NavBar = () => {
     <Header>
       <MyLink to="/">HOME</MyLink>
 
-      <MyLink to="/" $right>
+      <MyLink to="/signup" $right>
         {" "}
-        Test{" "}
+        Signup{" "}
       </MyLink>
       <Panier to="/cart"> Panier ({items.length}) </Panier>
     </Header>
