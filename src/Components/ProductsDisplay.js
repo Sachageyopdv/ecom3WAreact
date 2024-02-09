@@ -9,7 +9,6 @@ const ProductZone = styled.div`
 `;
 
 const ProductsDisplay = ({ products }) => {
-  console.log("Products @ ProductsDisplay:", products);
   return (
     <ProductZone>
       {products.map((elem) => (
