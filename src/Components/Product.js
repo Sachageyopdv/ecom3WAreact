@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { faker } from "@faker-js/faker";
+import { PanierContext } from "./panier-context";
 
 const Card = styled.div`
   border: grey solid 1px;
@@ -26,10 +27,17 @@ const ProductTitle = styled(Link)`
 `;
 
 const PriceButton = styled.button`
-
-`
+  order-radius: 20px;
+  align-self: center;
+  font-family: Optima, sans-serif;
+  color: grey;
+  margin: 5px;
+  padding: 3%;
+  margin-left: auto;
+`;
 
 const Product = ({ name, price, _id }) => {
+  const { addItemToCart } = useContext(PanierContext);
   return (
     <>
       <Card>
@@ -37,7 +45,10 @@ const Product = ({ name, price, _id }) => {
           <CardImage src={faker.image.url()}></CardImage>
         </Link>
         <ProductTitle>{name}</ProductTitle>
-        <button>{price}€</button>
+        <PriceButton>{price}€</PriceButton>
+        <button onClick={() => addItemToCart({ id: _id, name, price })}>
+          Ajouter au panier{" "}
+        </button>
       </Card>
     </>
   );

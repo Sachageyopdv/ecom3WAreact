@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { useContext } from "react";
+import { PanierContext } from "./panier-context";
 
 const Header = styled.nav`
   position: fixed;
@@ -26,16 +28,29 @@ const MyLink = styled(Link)`
   margin-left: ${(props) => (props.$right ? "auto" : "10px")};
 `;
 
+const Panier = styled(Link)`
+  align-self: center;
+  text-decoration: none;
+  font-family: Optima, sans-serif;
+  color: grey;
+  margin: 2%;
+  padding: 10px;
+  border: solid 2px black;
+  border-radius: 90px;
+  margin-left: ${(props) => (props.$right ? "auto" : "20px")};
+`;
+
 const NavBar = () => {
+  const { items } = useContext(PanierContext);
   return (
     <Header>
       <MyLink to="/">HOME</MyLink>
+
       <MyLink to="/" $right>
-        Log in
+        {" "}
+        Test{" "}
       </MyLink>
-      <MyLink to="/" $right>
-        Log in
-      </MyLink>
+      <Panier to="/cart"> Panier ({items.length}) </Panier>
     </Header>
   );
 };

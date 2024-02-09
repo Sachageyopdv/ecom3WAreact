@@ -5,7 +5,6 @@ const BrandFilter = ({ productList, setFilter }) => {
 
   let brandList = Array.from(new Set(productList.map((elem) => elem.brand)));
 
-  console.log(brandList);
   const handleSelect = (e) => {
     setSelectData(e.target.value);
     setFilter((prevFilter) => ({
